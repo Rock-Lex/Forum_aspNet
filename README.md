@@ -44,6 +44,7 @@ Technical task for the company GeekForLess
 ![Alt Text](https://github.com/Rock-Lex/Forum_aspNet/blob/master/materials/mainPage.png)
 ![Alt Text](https://github.com/Rock-Lex/Forum_aspNet/blob/master/materials/login.png)
 ![Alt Text](https://github.com/Rock-Lex/Forum_aspNet/blob/master/materials/registration.png)
+![Alt Text](https://github.com/Rock-Lex/Forum_aspNet/blob/master/materials/emailConfirmation.png)
 ![Alt Text](https://github.com/Rock-Lex/Forum_aspNet/blob/master/materials/homePage.png)
 ![Alt Text](https://github.com/Rock-Lex/Forum_aspNet/blob/master/materials/topicPage.png)
 ![Alt Text](https://github.com/Rock-Lex/Forum_aspNet/blob/master/materials/createTopicPage.png)
