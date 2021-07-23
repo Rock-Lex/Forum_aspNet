@@ -39,7 +39,7 @@ Technical task for the company GeekForLess
  - Then you need to confirm your email
  - Now you can use this forum (Create topics, leave comments, or change your comments)
  
- ##Or
+ Or
  - you can just use default login data
  -- Email: alkam@gmail.com
  -- Password: 12345
