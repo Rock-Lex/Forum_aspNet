@@ -31,7 +31,18 @@ Technical task for the company GeekForLess
  - git clone
  - open project with Visual Studio
  - find folder "Controllers" -> HomeController
+ - set Release mode
  - press 'play' button to run this project 
+
+ ## &ensp; &ensp;  <b> How to use this project? </b>
+ - You need to create new account with "Sign up" button
+ - Then you need to confirm your email
+ - Now you can use this forum (Create topics, leave comments, or change your comments)
+ 
+ ##Or
+ - you can just use default login data
+ -- Email: alkam@gmail.com
+ -- Password: 12345
 
 ## Author
 
