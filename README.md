@@ -19,6 +19,10 @@ Technical task for the company GeekForLess
 &ensp;&ensp;&ensp;&ensp; ● MS Visual Studio 
 
 ---
+## Database diagram
+![Alt Text](https://github.com/Rock-Lex/Forum_aspNet/blob/master/materials/Database_diagram.png)
+
+---
 ---
 
 
