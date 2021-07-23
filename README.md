@@ -17,6 +17,7 @@ Technical task for the company GeekForLess
 &ensp;&ensp;&ensp;&ensp; ● MS SQL Server <br/>
 &ensp;&ensp;&ensp;&ensp; ● Bootstrap <br/>
 &ensp;&ensp;&ensp;&ensp; ● MS Visual Studio 
+
 ---
 ---
 
