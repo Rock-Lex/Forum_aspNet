@@ -26,7 +26,7 @@ Technical task for the company GeekForLess
  ## &ensp; &ensp;  <b> How to run this project? </b>
  - git clone
  - open project with Visual Studio
- - find Folder "Controllers" -> HomeController
+ - find folder "Controllers" -> HomeController
  - press 'play' button to run this project 
 
 ## Author
