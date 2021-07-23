@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Подтверждение почты";
+    Html.RenderAction("HeaderStart", "Home");
+}
+
+
+
+<div class="container-xxl" style="margin-top: 20px;">
+    <div class="list-group">
+        <div class="list-group-item">
+            <h2>@ViewBag.Title.</h2>
+            <p>
+                Благодарим за подтверждение электронной почты. @Html.ActionLink("Щелкните здесь для входа", "Index", "Home", routeValues: null, htmlAttributes: new { id = "loginLink" })
+            </p>
+        </div>
+    </div>
+</div>

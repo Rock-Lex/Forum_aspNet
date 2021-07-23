@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Forum_netFramework.Models.Topic>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@{
+    Html.RenderAction("HeaderStart", "Home");
+}
+
+
+
+@*<div class="container-xxl" style="margin-top: 20px;">
+        <div class="list-group">
+            @foreach (var item in Model)
+            {
+            <a href="#" class="list-group-item list-group-item-action">@item.Name, @item.Description</a>
+            }
+
+
+        </div>
+    </div>*@
+
+
+
+<div style=" margin-top: 15%;" class="text-center">
+    <div class="badge text-wrap" style="background-color: transparent; backdrop-filter: blur(4px) ;">
+        <div>
+            <img class="mb-4" style="margin-right: -20px;" src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IlQiPjxwYXRoIGQ9Im0zMjAuNzE3IDUxMnYtNDAwLjgwNGgxNDUuMjgzdi0xMTEuMTk2aC00MjB2MTExLjE5NmgxNDUuNjJ2NDAwLjgwNHoiLz48L2c+PC9zdmc+" alt="" width="72" height="57" />
+            <img class="mb-4" src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IkYiPjxwYXRoIGQ9Im00MzYgMTExLjE5NnYtMTExLjE5NmgtMzYwdjUxMmgxMjcuMTkydi0yMDUuOTc5aDIwMC45NjJ2LTExMS4yMTFoLTIwMC45NjJ2LTgzLjYxNHoiLz48L2c+PC9zdmc+" alt="" width="72" height="57">
+            <p class="fs-4 aboutText" style="color: black; font-weight:900;">TechForum</p>
+            <p class="fs-4 aboutText">Get started</p>
+            <p class="fs-4 aboutText">Best way to discuss TECH</p>
+        </div>
+        <div class="home2__hero__buttons text-center buffer-sm">
+            <button class="myBtn">
+                <span href="javascript:void(0)" onclick="document.getElementById('lightS').style.display = 'block'; document.getElementById('fade').style.display = 'block'">Sign Up for Free</span>
+            </button>
+            <button class="btn btn-outline-light me-2">
+                <span href="javascript:void(0)" onclick="document.getElementById('lightL').style.display='block';document.getElementById('fade').style.display='block'">Log In</span>
+
+            </button>
+        </div>
+    </div>
+</div>
+

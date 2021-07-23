@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Forum_netFramework.Models.Topic>
+
+@*@model IEnumerable<Forum_netFramework.Models.ForumDBEntities>*@
+
+@{
+    ViewBag.Title = "HomePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    Html.RenderAction("HeaderAuthorised", "Home");
+}
+
+
+
+
+
+<div class="container-xxl" style="margin-top: 20px;">
+    <div class="list-group">
+        @foreach (var topic in Model)
+        {
+            <a href="@Url.Action("TopicPage", "Home", new { topicId = topic.Id })" class="list-group-item list-group-item-action">
+                <h4>@topic.Name</h4>
+                <div style="color:gray">От @topic.User.Name - @topic.CreationTime</div>
+                <p>@topic.Description</p>
+            </a>
+        }
+    </div>
+</div>

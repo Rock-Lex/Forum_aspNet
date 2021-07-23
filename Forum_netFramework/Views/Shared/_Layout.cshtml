@@ -1,0 +1,128 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Forum</title>
+    <link rel="shortcut icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyBpZD0iYm9sZCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjQgMjQiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTQuNSA2LjI1di00LjVjMC0uMjYuMDMtLjUxLjEtLjc1aC0yLjg1Yy0uOTYgMC0xLjc1Ljc5LTEuNzUgMS43NXY0LjVjMCAuOTYuNzkgMS43NSAxLjc1IDEuNzVoLjM3bDEuMjggMS43Yy4xNC4xOC4zNS4yOS41Ny4zaC4wM2MuMjIgMCAuNDItLjA5LjU2LS4yNmwxLjUtMS43MWMtLjkzLS41OC0xLjU2LTEuNjEtMS41Ni0yLjc4eiIvPjxwYXRoIGQ9Im0yMi4yNSAxaC0yLjg1Yy4wNy4yNC4xLjQ5LjEuNzV2NC41YzAgMS4xNy0uNjMgMi4yLTEuNTYgMi43OGwxLjUgMS43MWMuMTQuMTcuMzQuMjYuNTYuMjZoLjAzYy4yMi0uMDEuNDMtLjEyLjU3LS4zbDEuMjctMS43aC4zOGMuOTYgMCAxLjc1LS43OSAxLjc1LTEuNzV2LTQuNWMwLS45Ni0uNzktMS43NS0xLjc1LTEuNzV6Ii8+PHBhdGggZD0ibTEyIDEwYy0uMDA5IDAtLjAxOSAwLS4wMjggMC0uMjI2LS4wMDktLjQzNi0uMTE5LS41NzItLjNsLTEuMjc1LTEuN2gtMi4zNzVjLS45NjUgMC0xLjc1LS43ODUtMS43NS0xLjc1di00LjVjMC0uOTY1Ljc4NS0xLjc1IDEuNzUtMS43NWg4LjVjLjk2NSAwIDEuNzUuNzg1IDEuNzUgMS43NXY0LjVjMCAuOTY1LS43ODUgMS43NS0xLjc1IDEuNzVoLTIuMTZsLTEuNTI2IDEuNzQ0Yy0uMTQyLjE2My0uMzQ4LjI1Ni0uNTY0LjI1NnoiLz48Y2lyY2xlIGN4PSI0IiBjeT0iMTUiIHI9IjIiLz48cGF0aCBkPSJtNi42NyAxOC40Yy0xLjAxLjc2LTEuNjcgMS45OC0xLjY3IDMuMzV2LjI1aC00LjI1Yy0uNDEgMC0uNzUtLjM0LS43NS0uNzV2LS41YzAtMS41MiAxLjIzLTIuNzUgMi43NS0yLjc1aDIuNWMuNTIgMCAxLjAxLjE1IDEuNDIuNHoiLz48Y2lyY2xlIGN4PSIyMCIgY3k9IjE1IiByPSIyIi8+PHBhdGggZD0ibTI0IDIwLjc1di41YzAgLjQxLS4zNC43NS0uNzUuNzVoLTQuMjV2LS4yNWMwLTEuMzctLjY2LTIuNTktMS42Ny0zLjM1LjQxLS4yNS45LS40IDEuNDItLjRoMi41YzEuNTIgMCAyLjc1IDEuMjMgMi43NSAyLjc1eiIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTQuNSIgcj0iMyIvPjxwYXRoIGQ9Im0xNC43NSAxOWgtNS41Yy0xLjUxNyAwLTIuNzUgMS4yMzMtMi43NSAyLjc1djEuNWMwIC40MTQuMzM2Ljc1Ljc1Ljc1aDkuNWMuNDE0IDAgLjc1LS4zMzYuNzUtLjc1di0xLjVjMC0xLjUxNy0xLjIzMy0yLjc1LTIuNzUtMi43NXoiLz48L3N2Zz4=" />
+    <link rel="stylesheet" href="../../Content/CSS/Site.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="../../Content/JS/jquery-3.4.1.min.js"></script>
+    <script src="../../Content/JS/script.js"></script>
+</head>
+<body class=myBody style="background-color: black; background-image: url(../../Content/Img/back.jpg); background-size:cover; min-height: 93%; margin:auto ">
+
+
+    <!-- Body -->
+
+    @RenderBody()
+
+
+
+    <!-- Login -->
+
+    <div id="lightL" class="white_content">
+        <main class="form-signin text-center mx-auto" style="background-color: rgb(206, 204, 204); padding: 20px; border-radius: 15px; box-shadow: 0 30px 60px 0 rgb(0 0 0 / 30%);">
+            <form method="post" action="/Home/HomePage" onsubmit="return false">
+                <div style="margin-right: -90%;">
+                    <a class="closeBtn" href="javascript:void(0)" onclick="document.getElementById('lightL').style.display='none';document.getElementById('fade').style.display='none'">
+                        <img alt="" width="25" height="25" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjMyOXB0IiB2aWV3Qm94PSIwIDAgMzI5LjI2OTMzIDMyOSIgd2lkdGg9IjMyOXB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0xOTQuODAwNzgxIDE2NC43Njk1MzEgMTI4LjIxMDkzOC0xMjguMjE0ODQzYzguMzQzNzUtOC4zMzk4NDQgOC4zNDM3NS0yMS44MjQyMTkgMC0zMC4xNjQwNjMtOC4zMzk4NDQtOC4zMzk4NDQtMjEuODI0MjE5LTguMzM5ODQ0LTMwLjE2NDA2MyAwbC0xMjguMjE0ODQ0IDEyOC4yMTQ4NDQtMTI4LjIxMDkzNy0xMjguMjE0ODQ0Yy04LjM0Mzc1LTguMzM5ODQ0LTIxLjgyNDIxOS04LjMzOTg0NC0zMC4xNjQwNjMgMC04LjM0Mzc1IDguMzM5ODQ0LTguMzQzNzUgMjEuODI0MjE5IDAgMzAuMTY0MDYzbDEyOC4yMTA5MzggMTI4LjIxNDg0My0xMjguMjEwOTM4IDEyOC4yMTQ4NDRjLTguMzQzNzUgOC4zMzk4NDQtOC4zNDM3NSAyMS44MjQyMTkgMCAzMC4xNjQwNjMgNC4xNTYyNSA0LjE2MDE1NiA5LjYyMTA5NCA2LjI1IDE1LjA4MjAzMiA2LjI1IDUuNDYwOTM3IDAgMTAuOTIxODc1LTIuMDg5ODQ0IDE1LjA4MjAzMS02LjI1bDEyOC4yMTA5MzctMTI4LjIxNDg0NCAxMjguMjE0ODQ0IDEyOC4yMTQ4NDRjNC4xNjAxNTYgNC4xNjAxNTYgOS42MjEwOTQgNi4yNSAxNS4wODIwMzIgNi4yNSA1LjQ2MDkzNyAwIDEwLjkyMTg3NC0yLjA4OTg0NCAxNS4wODIwMzEtNi4yNSA4LjM0Mzc1LTguMzM5ODQ0IDguMzQzNzUtMjEuODI0MjE5IDAtMzAuMTY0MDYzem0wIDAiLz48L3N2Zz4=" />
+                    </a>
+                </div>
+                <img class="mb-4" style="margin-right: -20px;" src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IlQiPjxwYXRoIGQ9Im0zMjAuNzE3IDUxMnYtNDAwLjgwNGgxNDUuMjgzdi0xMTEuMTk2aC00MjB2MTExLjE5NmgxNDUuNjJ2NDAwLjgwNHoiLz48L2c+PC9zdmc+" alt="" width="72" height="57" />
+                <img class="mb-4" src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IkYiPjxwYXRoIGQ9Im00MzYgMTExLjE5NnYtMTExLjE5NmgtMzYwdjUxMmgxMjcuMTkydi0yMDUuOTc5aDIwMC45NjJ2LTExMS4yMTFoLTIwMC45NjJ2LTgzLjYxNHoiLz48L2c+PC9zdmc+" alt="" width="72" height="57">
+                <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+                @*Email*@
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" name="email" value="">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                @*Password*@
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" value="">
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <div class="checkbox mb-3 text-md-start" style="margin-top: 10px; margin-left: 10px;">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="w-100 btn btn-lg btn-dark" type="submit" onclick="LoginUser()">Login</button>
+                <p class="mt-5 mb-3 text-muted">© 2021–2022</p>
+            </form>
+        </main>
+    </div>
+    <div id="fade" class="black_overlay"></div>
+
+
+
+    <!-- Sign up -->
+
+
+    <div id="lightS" class="white_content">
+        <main class="form-signin text-center mx-auto" style="background-color: rgb(206, 204, 204); padding: 20px; border-radius: 15px; box-shadow: 0 30px 60px 0 rgb(0 0 0 / 30%);">
+            <form method="post" action="/Home/HomePage" onsubmit="return false">
+                <div style="margin-right: -90%;">
+                    <a class="closeBtn" href="javascript:void(0)" onclick="document.getElementById('lightS').style.display='none';document.getElementById('fade').style.display='none'">
+                        <img alt="" width="25" height="25" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjMyOXB0IiB2aWV3Qm94PSIwIDAgMzI5LjI2OTMzIDMyOSIgd2lkdGg9IjMyOXB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0xOTQuODAwNzgxIDE2NC43Njk1MzEgMTI4LjIxMDkzOC0xMjguMjE0ODQzYzguMzQzNzUtOC4zMzk4NDQgOC4zNDM3NS0yMS44MjQyMTkgMC0zMC4xNjQwNjMtOC4zMzk4NDQtOC4zMzk4NDQtMjEuODI0MjE5LTguMzM5ODQ0LTMwLjE2NDA2MyAwbC0xMjguMjE0ODQ0IDEyOC4yMTQ4NDQtMTI4LjIxMDkzNy0xMjguMjE0ODQ0Yy04LjM0Mzc1LTguMzM5ODQ0LTIxLjgyNDIxOS04LjMzOTg0NC0zMC4xNjQwNjMgMC04LjM0Mzc1IDguMzM5ODQ0LTguMzQzNzUgMjEuODI0MjE5IDAgMzAuMTY0MDYzbDEyOC4yMTA5MzggMTI4LjIxNDg0My0xMjguMjEwOTM4IDEyOC4yMTQ4NDRjLTguMzQzNzUgOC4zMzk4NDQtOC4zNDM3NSAyMS44MjQyMTkgMCAzMC4xNjQwNjMgNC4xNTYyNSA0LjE2MDE1NiA5LjYyMTA5NCA2LjI1IDE1LjA4MjAzMiA2LjI1IDUuNDYwOTM3IDAgMTAuOTIxODc1LTIuMDg5ODQ0IDE1LjA4MjAzMS02LjI1bDEyOC4yMTA5MzctMTI4LjIxNDg0NCAxMjguMjE0ODQ0IDEyOC4yMTQ4NDRjNC4xNjAxNTYgNC4xNjAxNTYgOS42MjEwOTQgNi4yNSAxNS4wODIwMzIgNi4yNSA1LjQ2MDkzNyAwIDEwLjkyMTg3NC0yLjA4OTg0NCAxNS4wODIwMzEtNi4yNSA4LjM0Mzc1LTguMzM5ODQ0IDguMzQzNzUtMjEuODI0MjE5IDAtMzAuMTY0MDYzem0wIDAiLz48L3N2Zz4=" />
+                    </a>
+                </div>
+
+                <img class="mb-4" style="margin-right: -20px;" src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IlQiPjxwYXRoIGQ9Im0zMjAuNzE3IDUxMnYtNDAwLjgwNGgxNDUuMjgzdi0xMTEuMTk2aC00MjB2MTExLjE5NmgxNDUuNjJ2NDAwLjgwNHoiLz48L2c+PC9zdmc+" alt="" width="72" height="57" />
+                <img class="mb-4" src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IkYiPjxwYXRoIGQ9Im00MzYgMTExLjE5NnYtMTExLjE5NmgtMzYwdjUxMmgxMjcuMTkydi0yMDUuOTc5aDIwMC45NjJ2LTExMS4yMTFoLTIwMC45NjJ2LTgzLjYxNHoiLz48L2c+PC9zdmc+" alt="" width="72" height="57">
+
+                <h1 class="h3 mb-3 fw-normal">Registration</h1>
+
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInputUsername" placeholder="Username" name="username">
+                    <label for="floatingInput">Username</label>
+                </div>
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com" name="emailR">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword1" placeholder="Password" name="password2">
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword2" placeholder="Password" name="password1">
+                    <label for="floatingPassword">Repeat password</label>
+                </div>
+
+                <div class="checkbox mb-3 text-md-start" style="margin-top: 10px; margin-left: 10px;">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button id="signUpButton" onclick="RegisterUser()" class="w-100 btn btn-lg btn-dark" type="submit">Sign up</button>
+                <p class="mt-5 mb-3 text-muted">© 2021–2022</p>
+
+            </form>
+        </main>
+
+    </div>
+    <div id="fade" class="black_overlay"></div>
+
+
+
+    <!-- Footer -->
+
+    <footer class="page-footer font-small blue footer" style="padding-left: 0px; margin: auto">
+
+        <div class="footer-copyright text-center py-3" style="margin: auto">
+            <a>© @DateTime.Now.Year Copyright: TechForum.com</a>
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+
+
+</body>
+</html>

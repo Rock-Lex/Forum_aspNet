@@ -1,0 +1,69 @@
+﻿@*@model Forum_netFramework.Models.Topic*@
+
+@model Forum_netFramework.Models.Topic.ReturnTopic
+
+@{
+    ViewBag.Title = "TopicPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    Html.RenderAction("HeaderAuthorised", "Home");
+}
+
+<link rel="stylesheet" href="../../Content/CSS/Site.css" />
+
+
+<div class="container-xxl" style="margin-top: 20px">
+    <div class="list-group">
+        <div class="list-group-item">
+            <h3>@Model.topic.Name</h3>
+            <div style="color:gray">От @Model.topic.User.Name - @Model.topic.CreationTime</div>
+            <p>@Model.topic.Text</p>
+        </div>
+    </div>
+</div>
+<div class="container" style="padding-bottom: 100px">
+    <div class="list-group">
+        <div class="list-group-item">
+            <h5>Comments</h5>
+            @if (Model.topic.Comments.Count == 0)
+            {
+                <div>
+                    <div style="color:gray">There is no comments</div>
+                </div>
+            }
+            else
+            {
+                foreach (var comment in Model.topic.Comments)
+                {
+                    <div>
+                        <div style="color:gray">
+                            От @comment.User.Name
+                            @if (Model.userId == comment.UserId)
+                            {
+                                <img onclick="document.getElementById('input + @comment.Id' ).style.display = 'block';" style="margin-top: -5px; margin-left: 10px" alt="" width="20" height="20" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQwMXB0IiB2aWV3Qm94PSIwIC0xIDQwMS41MjI4OSA0MDEiIHdpZHRoPSI0MDFwdCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMzcwLjU4OTg0NCAyNTAuOTcyNjU2Yy01LjUyMzQzOCAwLTEwIDQuNDc2NTYzLTEwIDEwdjg4Ljc4OTA2M2MtLjAxOTUzMiAxNi41NjI1LTEzLjQzNzUgMjkuOTg0Mzc1LTMwIDMwaC0yODAuNTg5ODQ0Yy0xNi41NjI1LS4wMTU2MjUtMjkuOTgwNDY5LTEzLjQzNzUtMzAtMzB2LTI2MC41ODk4NDRjLjAxOTUzMS0xNi41NTg1OTQgMTMuNDM3NS0yOS45ODA0NjkgMzAtMzBoODguNzg5MDYyYzUuNTIzNDM4IDAgMTAtNC40NzY1NjMgMTAtMTAgMC01LjUxOTUzMS00LjQ3NjU2Mi0xMC0xMC0xMGgtODguNzg5MDYyYy0yNy42MDE1NjIuMDMxMjUtNDkuOTY4NzUgMjIuMzk4NDM3LTUwIDUwdjI2MC41OTM3NWMuMDMxMjUgMjcuNjAxNTYzIDIyLjM5ODQzOCA0OS45Njg3NSA1MCA1MGgyODAuNTg5ODQ0YzI3LjYwMTU2Mi0uMDMxMjUgNDkuOTY4NzUtMjIuMzk4NDM3IDUwLTUwdi04OC43OTI5NjljMC01LjUyMzQzNy00LjQ3NjU2My0xMC0xMC0xMHptMCAwIi8+PHBhdGggZD0ibTM3Ni42Mjg5MDYgMTMuNDQxNDA2Yy0xNy41NzQyMTgtMTcuNTc0MjE4LTQ2LjA2NjQwNi0xNy41NzQyMTgtNjMuNjQwNjI1IDBsLTE3OC40MDYyNSAxNzguNDA2MjVjLTEuMjIyNjU2IDEuMjIyNjU2LTIuMTA1NDY5IDIuNzM4MjgyLTIuNTY2NDA2IDQuNDAyMzQ0bC0yMy40NjA5MzcgODQuNjk5MjE5Yy0uOTY0ODQ0IDMuNDcyNjU2LjAxNTYyNCA3LjE5MTQwNiAyLjU2MjUgOS43NDIxODcgMi41NTA3ODEgMi41NDY4NzUgNi4yNjk1MzEgMy41MjczNDQgOS43NDIxODcgMi41NjY0MDZsODQuNjk5MjE5LTIzLjQ2NDg0M2MxLjY2NDA2Mi0uNDYwOTM4IDMuMTc5Njg3LTEuMzQzNzUgNC40MDIzNDQtMi41NjY0MDdsMTc4LjQwMjM0My0xNzguNDEwMTU2YzE3LjU0Njg3NS0xNy41ODU5MzcgMTcuNTQ2ODc1LTQ2LjA1NDY4NyAwLTYzLjY0MDYyNXptLTIyMC4yNTc4MTIgMTg0LjkwNjI1IDE0Ni4wMTE3MTgtMTQ2LjAxNTYyNSA0Ny4wODk4NDQgNDcuMDg5ODQ0LTE0Ni4wMTU2MjUgMTQ2LjAxNTYyNXptLTkuNDA2MjUgMTguODc1IDM3LjYyMTA5NCAzNy42MjUtNTIuMDM5MDYzIDE0LjQxNzk2OXptMjI3LjI1NzgxMi0xNDIuNTQ2ODc1LTEwLjYwNTQ2OCAxMC42MDU0NjktNDcuMDkzNzUtNDcuMDkzNzUgMTAuNjA5Mzc0LTEwLjYwNTQ2OWM5Ljc2MTcxOS05Ljc2MTcxOSAyNS41ODk4NDQtOS43NjE3MTkgMzUuMzUxNTYzIDBsMTEuNzM4MjgxIDExLjczNDM3NWM5Ljc0NjA5NCA5Ljc3MzQzOCA5Ljc0NjA5NCAyNS41ODk4NDQgMCAzNS4zNTkzNzV6bTAgMCIvPjwvc3ZnPg==" />
+                            }
+                        </div>
+                        <p>@comment.Text</p>
+
+                        @if (Model.userId == comment.UserId)
+                        {
+                            <div id="input + @comment.Id" style="display: none;">
+                                <div class="form-floating" style="margin-bottom: 20px">
+                                    <form method="post" action="/Home/TopicPage?@Model.topic.Id" onsubmit="return false">
+                                        <input type="text" class="form-control" id="floatingPassword" placeholder="@comment.Text" name="changeComment" value="">
+                                        <button class="w-100 btn btn-lg btn-dark" type="submit" onclick="ChangeComment(@comment.Id)" style="max-width: 100px; margin-top: 10px">Change</button>
+                                        <button class="w-100 btn btn-lg btn-dark" type="submit" onclick="document.getElementById('input + @comment.Id').style.display='none'" style="max-width: 100px; margin-top: 10px">Cancel</button>
+                                    </form>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            }
+            <form method="post" action="/Home/TopicPage?@Model.topic.Id" onsubmit="return false">
+                <input style="margin-top: 10px;" type="text" class="form-control" id="newComment" placeholder="Write here" name="newComment" value="">
+                <button class="w-100 btn btn-lg btn-dark" type="submit" onclick="SendComment(@Model.topic.Id)" style="max-width: 80px; margin-top: 10px">Send</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "NewTopic";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main class="form-signin text-center mx-auto" style="min-width: 800px;  background-color: rgb(206, 204, 204); padding: 20px; border-radius: 15px; box-shadow: 0 30px 60px 0 rgb(0 0 0 / 30%);">
+    <form method="post" action="/Home/HomePage" onsubmit="return false">
+
+        <img class="mb-4" style="margin-top: 20px; margin-right: -20px;" src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IlQiPjxwYXRoIGQ9Im0zMjAuNzE3IDUxMnYtNDAwLjgwNGgxNDUuMjgzdi0xMTEuMTk2aC00MjB2MTExLjE5NmgxNDUuNjJ2NDAwLjgwNHoiLz48L2c+PC9zdmc+" alt="" width="72" height="57" />
+        <img class="mb-4" style="margin-top: 20px;" src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IkYiPjxwYXRoIGQ9Im00MzYgMTExLjE5NnYtMTExLjE5NmgtMzYwdjUxMmgxMjcuMTkydi0yMDUuOTc5aDIwMC45NjJ2LTExMS4yMTFoLTIwMC45NjJ2LTgzLjYxNHoiLz48L2c+PC9zdmc+" alt="" width="72" height="57">
+        <h1 class="h3 mb-3 fw-normal">Create topic</h1>
+
+        @*Name*@
+        <div class="form-floating">
+            <input type="text" class="form-control" placeholder="Text" id="floatingName" name="name" value="">
+            <label for="floatingName">Topic name</label>
+        </div>
+
+        @*Description*@
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingDescription" placeholder="Description" name="description" value="">
+            <label for="floatingDescription">Description</label>
+        </div>
+
+        @*Text*@
+        <div class="form-floating">
+            <textarea id="topicText" name="text" rows="4" cols="50" class="form-control" style="min-height: 300px"></textarea>
+            <label for="topicText">Text</label>
+        </div>
+
+        <div class="checkbox mb-3 text-md-start" style="margin-top: 10px; margin-left: 10px;">
+        </div>
+        <button class="w-100 btn btn-lg btn-dark" type="submit" onclick="CreateNewTopic()">Create new topic</button>
+    </form>
+</main>
