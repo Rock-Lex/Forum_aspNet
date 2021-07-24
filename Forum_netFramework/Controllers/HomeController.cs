@@ -110,8 +110,6 @@ namespace Forum_netFramework.Controllers
             return View();
         }
 
-        /*PartialView*/
-
         [ChildActionOnly]
         public PartialViewResult HeaderAuthorised()
         {
