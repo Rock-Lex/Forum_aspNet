@@ -19,6 +19,7 @@ namespace Forum_netFramework.Models
         {
             this.Comments = new HashSet<Comment>();
         }
+
         public struct ReturnTopic
         {
             public int userId;
