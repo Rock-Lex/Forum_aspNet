@@ -110,6 +110,18 @@ namespace Forum_netFramework.Controllers
             return View();
         }
 
+        private User FindCurrentUser()
+        {
+            string userEmail = Session["currentUserEmail"] as string;
+            string userPass = Session["currentUserPassword"] as string;
+
+            var passwordHash = userPass.GetHashCode();
+
+            var user = _dataBase.Users.First(x => x.Email == userEmail && x.PasswordHash == passwordHash);
+
+            return user;
+        }
+
         [ChildActionOnly]
         public PartialViewResult HeaderAuthorised()
         {
@@ -122,18 +134,6 @@ namespace Forum_netFramework.Controllers
         public PartialViewResult HeaderStart()
         {
             return PartialView("HeaderStart");
-        }
-
-        private User FindCurrentUser()
-        {
-            string userEmail = Session["currentUserEmail"] as string;
-            string userPass = Session["currentUserPassword"] as string;
-
-            var passwordHash = userPass.GetHashCode();
-
-            var user = _dataBase.Users.First(x => x.Email == userEmail && x.PasswordHash == passwordHash);
-
-            return user;
         }
     }
 }
