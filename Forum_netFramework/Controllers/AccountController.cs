@@ -27,7 +27,6 @@ namespace Forum_netFramework.Controllers
             return View();
         }
 
-
         [HttpPost]
         [AllowAnonymous]
         /*[ValidateAntiForgeryToken]*/

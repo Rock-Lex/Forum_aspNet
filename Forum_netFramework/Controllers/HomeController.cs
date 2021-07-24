@@ -34,12 +34,7 @@ namespace Forum_netFramework.Controllers
 
         public ActionResult TopicPage(int topicId)
         {
-            string userEmail = Session["currentUserEmail"] as string;
-            string userPassword = Session["currentUserPassword"] as string;
-
-            var passwordHash = userPassword.GetHashCode();
-
-            var user = _dataBase.Users.First(x => x.Email == userEmail && x.PasswordHash == passwordHash);
+            var user = FindCurrentUser();
 
             var topic = _dataBase.Topics.First(x => x.Id == topicId);
 
@@ -67,12 +62,7 @@ namespace Forum_netFramework.Controllers
         [HttpPost]
         public void SendComment(string commentText, int topicId)
         {
-            string userEmail = Session["currentUserEmail"] as string;
-            string userPassword = Session["currentUserPassword"] as string;
-
-            var passwordHash = userPassword.GetHashCode();
-
-            var user = _dataBase.Users.First(x => x.Email == userEmail && x.PasswordHash == passwordHash);
+            var user = FindCurrentUser();
 
             Comment newComment = new Comment()
             {
@@ -88,12 +78,7 @@ namespace Forum_netFramework.Controllers
         [HttpPost]
         public void ChangeComment(int commentId, string newCommentText)
         {
-            string userEmail = Session["currentUserEmail"] as string;
-            string userPassword = Session["currentUserPassword"] as string;
-
-            var passwordHash = userPassword.GetHashCode();
-
-            var user = _dataBase.Users.First(x => x.Email == userEmail && x.PasswordHash == passwordHash);
+            var user = FindCurrentUser();
 
             var oldComment = _dataBase.Comments.First(x => x.Id == commentId);
 
@@ -105,12 +90,7 @@ namespace Forum_netFramework.Controllers
         [HttpPost]
         public void CreateNewTopic(string topicName, string topicDescription, string topicText)
         {
-            string userEmail = Session["currentUserEmail"] as string;
-            string userPassword = Session["currentUserPassword"] as string;
-
-            var passwordHash = userPassword.GetHashCode();
-
-            var user = _dataBase.Users.First(x => x.Email == userEmail && x.PasswordHash == passwordHash);
+            var user = FindCurrentUser();
 
             Topic newTopic = new Topic()
             {
@@ -135,12 +115,7 @@ namespace Forum_netFramework.Controllers
         [ChildActionOnly]
         public PartialViewResult HeaderAuthorised()
         {
-            string userEmail = Session["currentUserEmail"] as string;
-            string userPass = Session["currentUserPassword"] as string;
-
-            var passwordHash = userPass.GetHashCode();
-
-            var user = _dataBase.Users.First(x => x.Email == userEmail && x.PasswordHash == passwordHash);
+            var user = FindCurrentUser();
 
             return PartialView("HeaderAuthorised", user);
         }
@@ -149,6 +124,18 @@ namespace Forum_netFramework.Controllers
         public PartialViewResult HeaderStart()
         {
             return PartialView("HeaderStart");
+        }
+
+        private User FindCurrentUser()
+        {
+            string userEmail = Session["currentUserEmail"] as string;
+            string userPass = Session["currentUserPassword"] as string;
+
+            var passwordHash = userPass.GetHashCode();
+
+            var user = _dataBase.Users.First(x => x.Email == userEmail && x.PasswordHash == passwordHash);
+
+            return user;
         }
     }
 }
