@@ -32,32 +32,47 @@ namespace Forum_netFramework.Controllers
         /*[ValidateAntiForgeryToken]*/
         public async Task<ActionResult> Register(string username, string password, string email)
         {
-            var passwordHash = password.GetHashCode();
-
-            User user = new User
+            if (ValidateData(username, password, email))
             {
-                Name = username,
-                PasswordHash = passwordHash,
-                Email = email,
-            };
+                var passwordHash = password.GetHashCode();
 
-            _dataBase.Users.Add(user);
-            _dataBase.SaveChanges();
+                User user = new User
+                {
+                    Name = username,
+                    PasswordHash = passwordHash,
+                    Email = email,
+                };
 
-            var code = GenetateCode(username);
+                _dataBase.Users.Add(user);
+                _dataBase.SaveChanges();
 
-            var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code },
-                        protocol: Request.Url.Scheme);
+                var code = GenetateCode(username);
 
-            IdentityMessage message = new IdentityMessage()
-            {
-                Destination = email,
-                Subject = "Подтверждение электронной почты",
-                Body = username + ", для завершения регистрации перейдите по ссылке " + callbackUrl
-            };
-            await SendAsync(message);
+                var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code },
+                            protocol: Request.Url.Scheme);
 
+                IdentityMessage message = new IdentityMessage()
+                {
+                    Destination = email,
+                    Subject = "Подтверждение электронной почты",
+                    Body = username + ", для завершения регистрации перейдите по ссылке " + callbackUrl
+                };
+                await SendAsync(message);
+
+                return View();
+            }
+        
             return View();
+        }
+
+        private bool ValidateData(string username, string password, string email)
+        {
+            if (username.Length > 0 && password.Length > 0 && email.Length > 0)
+            {
+                return true;
+            }
+         
+            return false;
         }
 
         private int GenetateCode(string username)

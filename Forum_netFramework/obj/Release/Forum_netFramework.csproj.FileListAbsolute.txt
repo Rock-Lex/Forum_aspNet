@@ -168,3 +168,4 @@ D:\Files\Shared\Projects\C#\.Net_MVC\Forum_netFramework\Forum_netFramework\obj\R
 D:\Files\Shared\Projects\C#\.Net_MVC\Forum_netFramework\Forum_netFramework\obj\Release\Forum_netFramework.csproj.CopyComplete
 D:\Files\Shared\Projects\C#\.Net_MVC\Forum_netFramework\Forum_netFramework\obj\Release\Forum_netFramework.dll
 D:\Files\Shared\Projects\C#\.Net_MVC\Forum_netFramework\Forum_netFramework\obj\Release\Forum_netFramework.pdb
+D:\Files\Shared\Projects\C#\.Net_MVC\Forum_netFramework\Forum_netFramework\obj\Release\Forum_netFramework.csproj.AssemblyReference.cache

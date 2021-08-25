@@ -34,75 +34,94 @@ namespace Forum_netFramework.Controllers
 
         public ActionResult TopicPage(int topicId)
         {
-            var user = FindCurrentUser();
-
-            var topic = _dataBase.Topics.First(x => x.Id == topicId);
-
-            Topic.ReturnTopic returnTopic = new Topic.ReturnTopic()
+            if (ValidateData(topicId))
             {
-                userId = user.Id,
-                topic = topic
-            };
+                var user = FindCurrentUser();
 
-            return View(returnTopic);
+                var topic = _dataBase.Topics.First(x => x.Id == topicId);
+
+                Topic.ReturnTopic returnTopic = new Topic.ReturnTopic()
+                {
+                    userId = user.Id,
+                    topic = topic
+                };
+
+                return View(returnTopic);
+            }
+
+            return View();
         }
 
         [HttpPost]
         public ActionResult Login(string password, string email)
         {
-            var passwordHash = password.GetHashCode();
-            var user = _dataBase.Users.First(x => x.Email == email && x.PasswordHash == passwordHash && x.IsConfirmed == true); // должно выбить ошибку если не нашло такого пользователя
+            if (ValidateData(password, email))
+            {
+                var passwordHash = password.GetHashCode();
+                var user = _dataBase.Users.First(x => x.Email == email && x.PasswordHash == passwordHash && x.IsConfirmed == true); // должно выбить ошибку если не нашло такого пользователя
 
-            Session["currentUserEmail"] = email;
-            Session["currentUserPassword"] = password;
+                Session["currentUserEmail"] = email;
+                Session["currentUserPassword"] = password;
 
-            return RedirectToAction("HomePage", "Home");
+                return RedirectToAction("HomePage", "Home");
+            }
+
+            return View();
         }
 
         [HttpPost]
         public void SendComment(string commentText, int topicId)
         {
-            var user = FindCurrentUser();
-
-            Comment newComment = new Comment()
+            if (ValidateData(commentText, topicId))
             {
-                Text = commentText,
-                TopicId = topicId,
-                UserId = user.Id
-            };
+                var user = FindCurrentUser();
 
-            _dataBase.Comments.Add(newComment);
-            _dataBase.SaveChanges();
+                Comment newComment = new Comment()
+                {
+                    Text = commentText,
+                    TopicId = topicId,
+                    UserId = user.Id
+                };
+
+                _dataBase.Comments.Add(newComment);
+                _dataBase.SaveChanges();
+            }
         }
 
         [HttpPost]
-        public void ChangeComment(int commentId, string newCommentText)
+        public void ChangeComment(string newCommentText, int commentId)
         {
-            var user = FindCurrentUser();
+            if (ValidateData(newCommentText, commentId))
+            {
+                var user = FindCurrentUser();
 
-            var oldComment = _dataBase.Comments.First(x => x.Id == commentId);
+                var oldComment = _dataBase.Comments.First(x => x.Id == commentId);
 
-            oldComment.Text = newCommentText;
+                oldComment.Text = newCommentText;
 
-            _dataBase.SaveChanges();
+                _dataBase.SaveChanges();
+            }
         }
 
         [HttpPost]
         public void CreateNewTopic(string topicName, string topicDescription, string topicText)
         {
-            var user = FindCurrentUser();
-
-            Topic newTopic = new Topic()
+            if (ValidateData(topicName, topicDescription, topicText))
             {
-                Name = topicName,
-                Description = topicDescription,
-                Text = topicText,
-                UsersId = user.Id,
-                CreationTime = DateTime.Now
-            };
+                var user = FindCurrentUser();
 
-            _dataBase.Topics.Add(newTopic);
-            _dataBase.SaveChanges();
+                Topic newTopic = new Topic()
+                {
+                    Name = topicName,
+                    Description = topicDescription,
+                    Text = topicText,
+                    UsersId = user.Id,
+                    CreationTime = DateTime.Now
+                };
+
+                _dataBase.Topics.Add(newTopic);
+                _dataBase.SaveChanges();
+            }
         }
 
         public ActionResult NewTopic()
@@ -134,6 +153,46 @@ namespace Forum_netFramework.Controllers
         public PartialViewResult HeaderStart()
         {
             return PartialView("HeaderStart");
+        }
+
+        private bool ValidateData(string password, string email)
+        {
+            if(password.Length > 0 && email.Length > 0)
+            {
+                return true;
+            }
+         
+            return false;
+        }
+
+        private bool ValidateData(string commentText, int topicId)
+        {
+            if (commentText.Length > 0 && topicId != null)
+            {
+                return true;
+            }
+    
+            return false;
+        }
+
+        private bool ValidateData(string topicName, string topicDescription, string topicText)
+        {
+            if (topicName.Length > 0 && topicDescription.Length > 0 && topicText.Length > 0)
+            {
+                return true;
+            }
+            
+            return false;
+        }
+
+        private bool ValidateData(int topicId)
+        {
+            if (topicId != null)
+            {
+                return true;
+            }
+    
+            return false;
         }
     }
 }

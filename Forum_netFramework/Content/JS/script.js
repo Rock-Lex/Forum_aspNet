@@ -4,7 +4,7 @@ function RegisterUser()
 {
     var getData = GetInputData();
 
-    if (CheckDataRegister(getData)) {
+    if (ValidateDataRegister(getData)) {
         $.ajax({
             method: "POST",
             /*            url: "/Home/Register",*/
@@ -24,7 +24,7 @@ function LoginUser()
 {
     var getData = GetInputData();
 
-    if (CheckDataLogin(getData)) {
+    if (ValidateDataLogin(getData)) {
         $.ajax({
             method: "POST",
             url: "/Home/Login",
@@ -43,7 +43,7 @@ function SendComment(topicId)
 {
     var commentText = $('input[name=newComment]').val();
 
-    if (CheckComment(commentText)) {
+    if (ValidateDataComment(commentText)) {
         $.ajax({
             method: "POST",
             url: "/Home/SendComment",
@@ -60,7 +60,7 @@ function ChangeComment(commentId)
 {
     var newText = $('input[name=changeComment]').val();
 
-    if (CheckComment(newText)) {
+    if (ValidateDataComment(newText)) {
         $.ajax({
             method: "POST",
             url: "/Home/ChangeComment",
@@ -77,7 +77,7 @@ function CreateNewTopic()
 {
     var getData = GetInputDataTopic();
 
-    if (CheckDataNewTopic(getData)) {
+    if (ValidateDataNewTopic(getData)) {
         $.ajax({
             method: "POST",
             url: "/Home/CreateNewTopic",
@@ -94,8 +94,8 @@ function GetInputData()
 {
     /*Register*/
     var UserEmail = $('input[name=emailR]').val();
-    var UserPass1 = $('input[name=password1]').val();
-    var UserPass2 = $('input[name=password2]').val();
+    var UserPass1 = $('input[name=password2]').val();
+    var UserPass2 = $('input[name=password1]').val();
     var UserName = $('input[name=username]').val();
 
     /*Login*/
@@ -126,19 +126,35 @@ function GetInputDataTopic()
     };
 }
 
-function CheckDataRegister(getData)
+function ValidateDataRegister(getData)
 {
     if (getData.name.length > 0)
     {
         if (getData.emailReg.length > 0)
         {
-            if (getData.pass1 == getData.pass2)
+            if (getData.pass1.length > 0)
             {
-                return 1;
+                if (getData.pass2.length > 0)
+                {
+                    if (getData.pass1 == getData.pass2)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        alert("Error. Passwords must be same");
+                        return 0;
+                    }
+                }
+                else
+                {
+                    alert("Error. You forgot to repeat your password");
+                    return 0;
+                }
             }
             else
             {
-                alert("Error. Passwords must be same");
+                alert("Error. You forgot to enter your password");
                 return 0;
             }
         }
@@ -155,7 +171,7 @@ function CheckDataRegister(getData)
     }
 }
 
-function CheckDataLogin(getData) 
+function ValidateDataLogin(getData)
 {
     if (getData.email.length > 0) {
         if (getData.pass.length > 0) {
@@ -172,7 +188,7 @@ function CheckDataLogin(getData)
     }
 }
 
-function CheckDataNewTopic(getData)
+function ValidateDataNewTopic(getData)
 {
     if (getData.tName.length > 0) {
         if (getData.tDescription.length > 0) {
@@ -195,7 +211,7 @@ function CheckDataNewTopic(getData)
     }
 }
 
-function CheckComment(commentText) {
+function ValidateDataComment(commentText) {
     if (commentText.length > 0) {
         return 1;
     }
