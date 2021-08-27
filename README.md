@@ -7,7 +7,7 @@ Technical task for the company GeekForLess
 &ensp;&ensp;&ensp;&ensp; ● Creating a new topic on the forum.<br/>
 &ensp;&ensp;&ensp;&ensp; ● Creating a message in the topic.<br/>
 &ensp;&ensp;&ensp;&ensp; ● Editing of your messages.<br/>
-&ensp;&ensp;&ensp;&ensp; ● Validation of entered data.
+&ensp;&ensp;&ensp;&ensp; ● Server side & client side validation of entered data.
 
 ---
 
