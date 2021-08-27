@@ -1,13 +1,12 @@
 # &ensp;Forum_aspNet
 
-Technical task for the company GeekForLess
-
 ### &ensp; <b> Requirements  </b>
 &ensp;&ensp;&ensp;&ensp; ● Registration of a new user with confirmation via email. <br/>
 &ensp;&ensp;&ensp;&ensp; ● Creating a new topic on the forum.<br/>
 &ensp;&ensp;&ensp;&ensp; ● Creating a message in the topic.<br/>
 &ensp;&ensp;&ensp;&ensp; ● Editing of your messages.<br/>
-&ensp;&ensp;&ensp;&ensp; ● Server side & client side validation of entered data.
+&ensp;&ensp;&ensp;&ensp; ● Server side & client side validation of entered data.<br/>
+&ensp;&ensp;&ensp;&ensp; ● Unit testing.
 
 ---
 
