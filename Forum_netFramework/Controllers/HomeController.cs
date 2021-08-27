@@ -23,8 +23,14 @@ namespace Forum_netFramework.Controllers
 
         public ActionResult Index()
         {
-            var Items = _dataBase.Topics;
-            return View(Items);
+            var items = _dataBase.Topics;
+            
+            if (items != null)
+            {
+                return View(items);
+            }
+
+            return View("Index");
         }
 
         public ActionResult HomePage()              
@@ -49,7 +55,7 @@ namespace Forum_netFramework.Controllers
                 return View(returnTopic);
             }
 
-            return View();
+            return View("TopicPage");
         }
 
         [HttpPost]
@@ -66,7 +72,7 @@ namespace Forum_netFramework.Controllers
                 return RedirectToAction("HomePage", "Home");
             }
 
-            return View();
+            return View("Login");
         }
 
         [HttpPost]
